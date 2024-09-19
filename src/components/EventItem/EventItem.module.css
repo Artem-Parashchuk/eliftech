@@ -1,0 +1,45 @@
+.item {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    width: 100%;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px -7px black;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.item:hover {
+    box-shadow: 0px 0px 18px 0px black;
+}
+.title {
+    font-size: 22px;
+}
+.description {
+    margin: 10px 0 20px 0;
+    font-size: 18px;
+}
+.item_bottom {
+    display: flex;
+    margin-top: auto;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.date{ 
+    font-size: 16px;
+    align-self: flex-end;
+}
+.item_links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.item_link {
+    font-size: 18px;
+    color: blue;
+}
+.item_link:hover,
+.item_link:focus {
+    text-decoration: underline;
+}
