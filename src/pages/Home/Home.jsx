@@ -1,10 +1,12 @@
 
+import { EventList } from '../../components/EventList/EventList'
 import s from './Home.module.css'
 
 export const Home = () => {
   return (
-    <main className={s.main}>
+    <div className={s.home}>
       <h1 className={s.title}>Events</h1>
-    </main>
+      <EventList/>
+    </div>
   )
 }
