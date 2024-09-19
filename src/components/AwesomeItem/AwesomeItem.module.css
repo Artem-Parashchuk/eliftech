@@ -1,0 +1,19 @@
+.item {
+    max-width: 250px;
+    width: 100%;
+    padding: 25px;
+    border: 1px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 0px 18px -7px black;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+.item:hover {
+    box-shadow: 0px 0px 18px 0px black;
+}
+.title {
+
+}
+.email {
+    margin-top: 25px;
+}
