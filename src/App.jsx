@@ -5,8 +5,18 @@ import { Home } from "./pages/Home/Home";
 import { Registration } from "./pages/Registration/Registration";
 import { AwesomeEvent } from "./pages/AwesomeEvent/AwesomeEvent";
 import { Footer } from "./components/Footer/Footer";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { fetchEventsThunk } from "./redux/events/thunks";
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(fetchEventsThunk())
+  }, [dispatch])
+
   return (
     <div className={s.container}>
       <Header />
