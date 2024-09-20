@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import s from "./EventItem.module.css";
 
 export const EventItem = ({ event }) => {
-  console.log(event.title);
   return (
     <li className={s.item}>
       <h3 className={s.title}>{event.title}</h3>
