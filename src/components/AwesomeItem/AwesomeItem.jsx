@@ -1,34 +1,10 @@
 import s from './AwesomeItem.module.css'
 
-export const AwesomeItem = () => {
+export const AwesomeItem = ({user}) => {
   return (<>
     <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
-    </li>
-    <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
-    </li>
-    <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
-    </li>
-    <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
-    </li>
-    <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
-    </li>
-    <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
-    </li>
-    <li className={s.item}>
-        <h3 className={s.title}>Jhon Doe</h3>
-        <p className={s.email}>jhon.doe@gmail.com</p>
+        <h3 className={s.title}>{user.name}</h3>
+        <p className={s.email}>{user.email}</p>
     </li>
   </>
   )
