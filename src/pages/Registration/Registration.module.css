@@ -25,6 +25,13 @@ label, input,.title_radio {
 
 }
 
+.input_name{
+    position: relative;
+    text-transform: capitalize;
+}
+.error {
+    color: red;
+}
 .input_name,
 .input_email,
 .input_date{
