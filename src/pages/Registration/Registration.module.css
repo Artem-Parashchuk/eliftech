@@ -22,7 +22,10 @@ label, input,.title_radio {
 .lable_date,
 .title_radio {
     margin-top: 25px;
-
+}
+.lable_date {
+    display: flex;
+    flex-direction: column;
 }
 
 .input_name{

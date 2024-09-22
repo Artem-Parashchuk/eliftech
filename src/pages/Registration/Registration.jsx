@@ -1,7 +1,9 @@
 import { useState } from "react";
-import s from "./Registration.module.css";
+import DatePicker from "react-datepicker"; // Імпорт DatePicker
+import "react-datepicker/dist/react-datepicker.css"; // Стилі для DatePicker
 import { useDispatch } from "react-redux";
 import { submitFormThunk } from "../../redux/form/formThunks.js";
+import s from "./Registration.module.css";
 
 export const Registration = () => {
   // Стан для збереження помилок
@@ -11,7 +13,7 @@ export const Registration = () => {
   const [formData, setFormData] = useState({
     userName: "",
     userEmail: "",
-    userBirth: "",
+    userBirth: null, // Дата має бути null за замовчуванням
     event: "",
   });
 
@@ -72,10 +74,18 @@ export const Registration = () => {
       setFormData({
         userName: "",
         userEmail: "",
-        userBirth: "",
+        userBirth: null, // Повертаємо дату в null
         event: "",
       });
     }
+  };
+
+  // Обробник зміни дати
+  const handleDateChange = (date) => {
+    setFormData({
+      ...formData,
+      userBirth: date, // Оновлюємо дату в стані
+    });
   };
 
   return (
@@ -94,7 +104,6 @@ export const Registration = () => {
             required
             maxLength={25}
           />
-          {/* Відображення помилки для імені */}
           {errors.userName && <p className={s.error}>{errors.userName}</p>}
         </label>
 
@@ -111,22 +120,21 @@ export const Registration = () => {
             maxLength={25}
             required
           />
-          {/* Відображення помилки для email */}
           {errors.userEmail && <p className={s.error}>{errors.userEmail}</p>}
         </label>
 
         <label htmlFor="userBirth" className={s.lable_date}>
           Date of birth
-          <input
-            type="date"
-            className={s.input_date}
-            name="userBirth"
-            id="userBirth"
-            value={formData.userBirth}
-            onChange={handleChange}
-            required
+          <DatePicker
+            selected={formData.userBirth}
+            onChange={handleDateChange} 
+            className={s.input_date} 
+            dateFormat="yyyy-MM-dd" 
+            placeholderText="Select your birth date" 
+            maxDate={new Date()} 
+            showYearDropdown 
+            scrollableYearDropdown 
           />
-          {/* Відображення помилки для дати народження */}
           {errors.userBirth && <p className={s.error}>{errors.userBirth}</p>}
         </label>
 
@@ -169,7 +177,6 @@ export const Registration = () => {
             Found myself
           </label>
         </div>
-        {/* Відображення помилки для вибору джерела події */}
         {errors.event && <p className={s.error}>{errors.event}</p>}
 
         <button className={s.btn} type="submit">
